@@ -1,6 +1,6 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 import numpy as np
 from dash.dependencies import Input, Output
 
@@ -95,4 +95,4 @@ def update_value(sens,spec):
     )
 
 if __name__ == '__main__':
-    app.run_server(debug=False,dev_tools_ui=False,dev_tools_props_check=False)
+    app.run_server(debug=False,dev_tools_ui=False,dev_tools_props_check=False, host='0.0.0.0')
