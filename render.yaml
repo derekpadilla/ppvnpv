@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: predictive-value-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn display_graph:server --workers 1 --threads 8 --timeout 0 --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18 # Or your preferred Python version
