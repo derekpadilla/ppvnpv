@@ -339,7 +339,6 @@ def toggle_theme(n_clicks, current_theme):
      Input({'type': 'scenario-btn', 'index': dash.ALL}, 'n_clicks'), Input({'type': 'case-btn', 'index': dash.ALL}, 'n_clicks'), Input('app-theme', 'data')],
     prevent_initial_call='initial_duplicate'
 )
-)
 def update_main_calculator(sens, spec, focus_prev, graph_type, scenario_clicks, case_clicks, theme):
     ctx = callback_context
     triggered_id = ctx.triggered_id
