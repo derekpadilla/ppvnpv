@@ -336,7 +336,9 @@ def toggle_theme(n_clicks, current_theme):
     [Output('output-graph', 'children'), Output('results-summary', 'children'), Output('realtime-results', 'children'), Output('clinical-insights', 'children'),
      Output('sens', 'value', allow_duplicate=True), Output('spec', 'value', allow_duplicate=True), Output('focus-prevalence', 'value', allow_duplicate=True)],
     [Input('sens', 'value'), Input('spec', 'value'), Input('focus-prevalence', 'value'), Input('graph-type', 'value'),
-     Input({'type': 'scenario-btn', 'index': dash.ALL}, 'n_clicks'), Input({'type': 'case-btn', 'index': dash.ALL}, 'n_clicks'), Input('app-theme', 'data')]
+     Input({'type': 'scenario-btn', 'index': dash.ALL}, 'n_clicks'), Input({'type': 'case-btn', 'index': dash.ALL}, 'n_clicks'), Input('app-theme', 'data')],
+    prevent_initial_call='initial_duplicate'
+)
 )
 def update_main_calculator(sens, spec, focus_prev, graph_type, scenario_clicks, case_clicks, theme):
     ctx = callback_context
